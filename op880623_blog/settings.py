@@ -29,6 +29,7 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'myTables.apps.MytablesConfig',
     'django_tables2',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'op880623_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Taipei'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
