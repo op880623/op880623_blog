@@ -5,8 +5,8 @@ from django.utils import timezone
 
 
 class Champion(models.Model):
-    name                 = models.CharField(max_length=10)
-    eng_name             = models.CharField(max_length=10)
+    name                 = models.CharField(max_length=30)
+    eng_name             = models.CharField(max_length=30)
     hp                   = models.CharField(max_length=10, default=0)
     hpperlevel           = models.CharField(max_length=10, default=0)
     hpregen              = models.CharField(max_length=10, default=0)
