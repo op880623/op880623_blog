@@ -21,7 +21,7 @@ class ChampionTable(tables.Table):
     attackdamage         = tables.Column(verbose_name = "物理攻擊")
     attackdamageperlevel = tables.Column(verbose_name = "物理攻擊成長")
     attackdamagemax      = tables.Column(verbose_name = "最大物理攻擊")
-    attackspeedoffset    = tables.Column(verbose_name = "攻擊速度")
+    attackspeed          = tables.Column(verbose_name = "攻擊速度")
     attackspeedperlevel  = tables.Column(verbose_name = "攻擊速度成長")
     attackrange          = tables.Column(verbose_name = "攻擊距離")
     armor                = tables.Column(verbose_name = "物理防禦")
