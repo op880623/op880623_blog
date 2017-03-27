@@ -34,13 +34,13 @@ def champion_info_from(url):
             champion.mpregen              = float(ability_value_of('stats_mpregen'))
             champion.mpregenperlevel      = float(ability_value_of('stats_mpregenperlevel'))
             champion.mpregenmax           = champion.mpregen + 17*champion.mpregenperlevel
-            champion.movespeed            = float(ability_value_of('stats_movespeed'))
+            champion.movespeed            = int(ability_value_of('stats_movespeed'))
             champion.attackdamage         = float(ability_value_of('stats_attackdamage'))
             champion.attackdamageperlevel = float(ability_value_of('stats_attackdamageperlevel'))
             champion.attackdamagemax      = champion.attackdamage + 17*champion.attackdamageperlevel
-            champion.attackspeedoffset    = float(ability_value_of('stats_attackspeedoffset'))
+            champion.attackspeed          = 0.625/(1+float(ability_value_of('stats_attackspeedoffset')))
             champion.attackspeedperlevel  = float(ability_value_of('stats_attackspeedperlevel'))
-            champion.attackrange          = float(ability_value_of('stats_attackrange'))
+            champion.attackrange          = int(ability_value_of('stats_attackrange'))
             champion.armor                = float(ability_value_of('stats_armor'))
             champion.armorperlevel        = float(ability_value_of('stats_armorperlevel'))
             champion.armormax             = champion.armor + 17*champion.armorperlevel
