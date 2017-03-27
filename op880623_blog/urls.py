@@ -17,6 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^myTables/', include('myTables.urls')),
+    url(r'^lol_champion_info/', include('myTables.urls')),
     url(r'^admin/', admin.site.urls),
 ]
