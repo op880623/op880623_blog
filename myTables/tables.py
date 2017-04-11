@@ -3,7 +3,7 @@ from .models import Champion
 
 
 class ChampionTable(tables.Table):
-#    id                   = tables.Column(verbose_name = "id")
+    id                   = tables.Column(verbose_name = "id")
     name                 = tables.Column(verbose_name = "名字")
     eng_name             = tables.Column(verbose_name = "英文")
     hp                   = tables.Column(verbose_name = "生命")
@@ -31,9 +31,9 @@ class ChampionTable(tables.Table):
     spellblock           = tables.Column(verbose_name = "魔法防禦")
     spellblockperlevel   = tables.Column(verbose_name = "魔法防禦成長")
     spellblockmax        = tables.Column(verbose_name = "最大魔法防禦")
-#    update_date          = tables.Column(verbose_name = "更新日期")
+    update_date          = tables.Column(verbose_name = "更新日期")
 
     class Meta:
         attrs = {'class': 'paleblue'}
         order_by = 'eng_name'
-#        empty_text = "All champions seem to have a vacation together!"
+        empty_text = "There is no champion match requirements."

@@ -25,8 +25,8 @@ def champion_info_from(url):
             champion = Champion()
         finally:
             check_update = False
-            check_diff(champion, 'name'                , ability_value_of('champion_name'))
             check_diff(champion, 'eng_name'            , ability_value_of('champintro-stats__info-name-en'))
+            check_diff(champion, 'name'                , ability_value_of('champion_name'))
             check_diff(champion, 'hp'                  , round(float(ability_value_of('stats_hp')), 3))
             check_diff(champion, 'hpperlevel'          , round(float(ability_value_of('stats_hpperlevel')), 3))
             check_diff(champion, 'hpmax'               , round(champion.hp + 17*champion.hpperlevel, 3))
