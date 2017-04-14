@@ -34,6 +34,6 @@ class ChampionTable(tables.Table):
     update_date          = tables.Column(verbose_name = "更新日期")
 
     class Meta:
-        attrs = {'class': 'paleblue'}
+        attrs = {'class': 'table_style'}
         order_by = 'eng_name'
         empty_text = "There is no champion match requirements."
