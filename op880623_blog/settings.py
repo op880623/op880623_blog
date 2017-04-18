@@ -29,6 +29,7 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'article.apps.ArticleConfig',
     'myTables.apps.MytablesConfig',
     'django_tables2',
     'django.contrib.admin',
