@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^lol_champion_info/', include('myTables.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^article/', include('article.urls')),
 ]
