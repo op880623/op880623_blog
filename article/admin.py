@@ -10,6 +10,7 @@ class ArticleAdmin(admin.ModelAdmin):
         ('Date information', {'fields': [('created_date','published_date')]  }),
     ]
     list_display = ['title', 'author', 'classification', 'created_date', 'published_date']
+    list_editable = ['classification', 'published_date']
     list_filter = ['classification', 'created_date', 'author']
     search_fields = ['title', 'text']
 
