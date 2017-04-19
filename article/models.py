@@ -37,7 +37,7 @@ class Article(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     classification = models.ForeignKey(Classification, blank=True, null=True)
-    source = models.URLField(max_length=200)
+    source = models.URLField(max_length=200, blank=True, null=True)
 
     def slug(self):
         return slugify(self.title, allow_unicode=True)
