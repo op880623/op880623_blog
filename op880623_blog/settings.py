@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     # greater consistency between gunicorn and `./manage.py runserver`. See:
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
+    'op880623_blog.apps.MyStaticFilesConfig',
+    # 'django.contrib.staticfiles',     #replaced by 'MyStaticFilesConfig' to customize collectstatic
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -61,7 +62,10 @@ ROOT_URLCONF = 'op880623_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            'themes',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,6 +135,7 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
+    'themes',
 ]
 
 # Simplified static file serving.
