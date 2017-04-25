@@ -26,6 +26,12 @@ class Classification(models.Model):
             all_content = all_content.union(child.list_all_content())
         return all_content
 
+    def format_url(self):
+        if self.parent:
+            return self.parent.format_url()+self.name+'/'
+        else:
+            return self.name+'/'
+
     def __str__(self):
         return self.name
 
@@ -48,6 +54,15 @@ class Article(models.Model):
 
     def list_sibling(self):
         return self.classification.list_content()
+
+    def format_simple_url(self):
+        return str(self.id)+'/'+self.slug()+'/'
+
+    def format_url(self):
+        if self.classification:
+            return self.classification.format_url()+self.format_simple_url()
+        else:
+            return self.format_simple_url()
 
     def __str__(self):
         return self.title
