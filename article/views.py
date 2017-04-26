@@ -4,13 +4,16 @@ from .models import Article, Classification
 from django.http import HttpResponse
 
 
-def list(request, page='1'):
-    return HttpResponse("article list page")
-
 def list_by_category(request, category=''):
-    classification = Classification.objects.get(name=category)
-    articles = get_list_or_404(Article, classification=classification)
-    return render(request, 'startbootstrap-blog-4-dev/article.html')
+    try:
+        classification = Classification.objects.get(name=category.split('/')[-1])
+        articles = Article.objects.filter(classification=classification)
+        children = classification.list_child()
+    except:
+        classification = ''
+        articles = Article.objects.filter(classification__isnull=True)
+        children = Classification.objects.filter(parent__isnull=True)
+    return render(request, 'startbootstrap-blog-4-dev/list.html', {'category': classification, 'children': children, 'articles': articles})
 
 def article_by_id(request, id):
     article = get_object_or_404(Article, id=int(id))
