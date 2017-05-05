@@ -1,12 +1,10 @@
 
-# My personal blog
+# Deprecated
 
-built with heroku-django-template
+This project is mixing multiple apps which are unrelated.
 
-## Heroku Django Starter Template
+I've seperated them into independent project.
 
- - An utterly fantastic project starter template for Django 1.10.
- - https://github.com/heroku/heroku-django-template
+https://github.com/op880623/virtualeb
 
-
-## License: MIT
+https://github.com/op880623/lol_champion_info_site
